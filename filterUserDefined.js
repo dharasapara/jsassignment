@@ -1,3 +1,5 @@
+"use strict"
+
 /*
 const ages = [32, 33, 16, 40];
 
@@ -10,13 +12,15 @@ function checkAdult(age) {
 
 const ages = [32, 33, 16, 40];
 
-document.getElementById("demo").innerHTML = myfilter(ages, checkAdult);
+document.getElementById("demo").innerHTML = myfilter(ages);
 
-function myfilter(ages, checkAdult) {
-  // let res = [];
+function myfilter(ages) {
+  let res = [];
   for (var i = 0; i < ages.length; i++) {
-    console.log(checkAdult(ages[i]));
+      if(checkAdult(ages[i]))
+        res.push(ages[i]);
   }
+  return res;
 }
 
 function checkAdult(age) {
